@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Materi: English & Arabic (SDIT Tihamah)</title>
+  <style>
+    :root{
+      --bg:#0b3b2e; /* dark green */
+      --card:#114b3b;
+      --accent:#ffeb38;
+      --glass: rgba(255,255,255,0.04);
+    }
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+    body{
+      background: radial-gradient(ellipse at top left, rgba(0,0,0,0.25), transparent), var(--bg);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+      box-sizing:border-box;
+    }
+
+    /* falling stars */
+    .sky{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+    .star{
+      position:absolute;
+      width:2px;height:80px;opacity:0.85;
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0));
+      filter:drop-shadow(0 0 8px rgba(255,255,200,0.6));
+      transform:rotate(-20deg);
+      animation:fall linear infinite;
+    }
+    @keyframes fall{from{transform:translateY(-120vh) rotate(-20deg)} to{transform:translateY(120vh) rotate(-20deg)}}
+
+    .container{max-width:1100px;margin:0 auto;position:relative;z-index:2}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  .logo{
+  width:110px;
+  height:110px;
+  flex:0 0 110px;
+  /* hapus border-radius, overflow, background, shadow */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+  filter: drop-shadow(0 0 12px rgba(180,255,200,0.55)); /* glow tetap ada */
+}
+
+    h1{margin:0;font-size:22px}
+    p.lead{margin:0;color: #fffc37}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:14px;margin-bottom:14px;box-shadow: 0 6px 24px rgba(2,10,6,0.6);border:1px solid rgba(255,255,255,0.03)}
+    .topic-title{display:flex;justify-content:space-between;align-items:center}
+    table{width:100%;border-collapse:collapse;margin-top:10px}
+    th,td{padding:8px 10px;border-bottom:1px dashed rgba(255,255,255,0.03);vertical-align:middle}
+    th{background:rgba(255,255,255,0.02);text-align:left}
+    td.ar{direction:rtl;font-size:17px}
+    .controls{display:flex;gap:8px}
+    button{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.04);color:var(--accent);padding:8px 12px;border-radius:8px;cursor:pointer}
+    .small{font-size:13px;color: #fff562}
+    footer{margin-top:20px;color: #ffee06}
+
+    /* logo glow special */
+    .logo-glow{position:relative}
+
+
+    /* responsive */
+    @media(max-width:700px){.logo{width:74px;height:74px}h1{font-size:18px}}
+  </style>
+</head>
+<body>
+  <div class="sky" id="sky"></div>
+  <div class="container">
+    <header>
+      <div class="logo logo-glow"><img src="LOGO SDIT 2023.png" alt="Logo SDIT Tihamah" id="schoolLogo"></div>
+      <div>
+        <h1>Materi Bahasa Inggris — Bahasa Arab (dengan harokat) + Terjemahan</h1>
+        <p class="lead small">Topik: Ordinal Number, Cardinal Number, Fraction Number, Decimal Number, Multiplicative Numbers, Date &amp; Year — disusun untuk SD/MI.</p>
+        
+      <div style="margin-left:auto" class="controls">
+        <button onclick="downloadCSV()">Download CSV (Excel)</button>
+        <button onclick="window.print()">Cetak / Print (PDF)</button>
+      </div>
+    </header>
+
+    <!-- ORDINAL -->
+    <section class="card">
+      <div class="topic-title"><strong>Ordinal Numbers — Bilangan Urut</strong><span class="small">(contoh kalimat)</span></div>
+      <table>
+        <thead><tr><th>No</th><th>English</th><th>Arabic (harakat)</th><th>Terjemahan (ID)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>She finished <strong>first</strong> in the race.</td><td class="ar">أَنْهَتِ ٱلرِّيَاضَةَ <strong>الأُولَى</strong>.</td><td>Dia menyelesaikan pertandingan <em>pertama</em>.</td></tr>
+          <tr><td>2</td><td>This is my <strong>second</strong> book.</td><td class="ar">هٰذَا كِتَابِي <strongُ>الثَّانِي</strong>.</td><td>Ini adalah buku saya yang <em>kedua</em>.</td></tr>
+          <tr><td>3</td><td>He sat in the <strong>third</strong> row.</td><td class="ar">جَلَسَ فِي ٱلسَّطْرِ <strongُ>الثَّالِثِ</strong>.</td><td>Dia duduk di baris <em>ketiga</em>.</td></tr>
+          <tr><td>4</td><td>Today is the <strong>fifth</strong> of May.</td><td class="ar">ٱلْيَوْمَ هُوَ الْخَامِسُ مِنْ مَايُو.</td><td>Hari ini tanggal <em>kelima</em> Mei.</td></tr>
+          <tr><td>5</td><td>My <strong>tenth</strong> birthday is special.</td><td class="ar">عِيدُ مِيلَادِي ٱلْعَاشِرُ مُمَيَّزٌ.</td><td>Ulang tahunku yang <em>kesepuluh</em> istimewa.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- CARDINAL -->
+    <section class="card">
+      <div class="topic-title"><strong>Cardinal Numbers — Bilangan Pokok</strong><span class="small">(contoh kalimat)</span></div>
+      <table>
+        <thead><tr><th>No</th><th>English</th><th>Arabic (harakat)</th><th>Terjemahan (ID)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>I have <strong>one</strong> pencil.</td><td class="ar">عِنْدِي قَلَمٌ وَاحِدٌ.</td><td>Saya punya <em>satu</em> pensil.</td></tr>
+          <tr><td>2</td><td>There are <strong>three</strong> apples.</td><td class="ar">هُنَاكَ ثَلَاثُ تُفَّاحَاتٍ.</td><td>Ada <em>tiga</em> apel.</td></tr>
+          <tr><td>3</td><td>They found <strong>seven</strong> shells on the beach.</td><td class="ar">وَجَدُوا سَبْعَ قُلُوبٍ عَلَى الشَّاطِئِ.</td><td>Mereka menemukan <em>tujuh</em> kerang di pantai.</td></tr>
+          <tr><td>4</td><td>I saw <strong>twenty</strong> birds.</td><td class="ar">رَأَيْتُ عِشْرِينَ طَائِرًا.</td><td>Saya melihat <em>dua puluh</em> burung.</td></tr>
+          <tr><td>5</td><td>She bought <strong>hundred</strong> stickers.</td><td class="ar">اشْتَرَتْ مِئَةَ لَوْزَمَةٍ.</td><td>Dia membeli <em>seratus</em> stiker.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- FRACTION -->
+    <section class="card">
+      <div class="topic-title"><strong>Fraction Numbers — Pecahan</strong><span class="small">(contoh kalimat)</span></div>
+      <table>
+        <thead><tr><th>No</th><th>English</th><th>Arabic (harakat)</th><th>Terjemahan (ID)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>I ate <strong>one half</strong> of the cake.</td><td class="ar">أَكَلْتُ نِصْفَ ٱلْكَعْكَةِ.</td><td>Saya makan <em>setengah</em> kue.</td></tr>
+          <tr><td>2</td><td>He drank <strong>a quarter</strong> of the juice.</td><td class="ar">شَرِبَ رُبْعَ ٱلْعَصِيرِ.</td><td>Dia minum <em>seperempat</em> jus.</td></tr>
+          <tr><td>3</td><td>She used <strong>three quarters</strong> of the fabric.</td><td class="ar">اِسْتَخْدَمَتْ ثَلَاثَةَ أَرْبَاعٍ مِنَ ٱلْقِطْعَةِ.</td><td>Dia memakai <em>tiga perempat</em> kain.</td></tr>
+          <tr><td>4</td><td>He gave me <strong>one third</strong> of his cookies.</td><td class="ar">أَعْطَانِي ثُلْثَ بِسْكُوِيتَاتِهِ.</td><td>Dia memberi saya <em>satu pertiga</em> kue keringnya.</td></tr>
+          <tr><td>5</td><td>We walked <strong>two fifths</strong> of the way.</td><td class="ar">سِرْنَا ثُمَانِيَةَ خُمُوسٍ مِنَ ٱلطَّرِيقِ.</td><td>Kami berjalan <em>dua per lima</em> dari jalan.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- DECIMAL -->
+    <section class="card">
+      <div class="topic-title"><strong>Decimal Numbers — Bilangan Desimal</strong><span class="small">(contoh kalimat)</span></div>
+      <table>
+        <thead><tr><th>No</th><th>English</th><th>Arabic (harakat)</th><th>Terjemahan (ID)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>The price is <strong>2.5</strong> dollars.</td><td class="ar">ٱلسِّعْرُ هُوَ ٱلْعَشَرِيُّ ٢٫٥ دُولَارٍ.</td><td>Harganya <em>2.5</em> dolar.</td></tr>
+          <tr><td>2</td><td>He ran <strong>0.75</strong> kilometers.</td><td class="ar">رَكَضَ ٠٫٧٥ كِيلُومِتْرًا.</td><td>Dia berlari <em>0,75</em> kilometer.</td></tr>
+          <tr><td>3</td><td>Milk weighs <strong>1.2</strong> kg.</td><td class="ar">يَزِنُ ٱلْحَلِيبُ ١٫٢ كِيلُوغْرَامٍ.</td><td>Susu memiliki berat <em>1,2</em> kg.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- MULTIPLICATIVE -->
+    <section class="card">
+      <div class="topic-title"><strong>Multiplicative Numbers — Bilangan Perkalian / Kali</strong><span class="small">(contoh kalimat)</span></div>
+      <table>
+        <thead><tr><th>No</th><th>English</th><th>Arabic (harakat)</th><th>Terjemahan (ID)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>I have <strong>two times</strong> your score.</td><td class="ar">لِي عَدَدٌ يُعَادِلُ نَتِيجَتَكَ مَرَّتَيْنِ.</td><td>Saya punya <em>dua kali</em> skormu.</td></tr>
+          <tr><td>2</td><td>This cake is <strong>three times</strong> bigger.</td><td class="ar">هٰذَا ٱلْكَعْكُ أَكْبَرُ ثَلَاثَ مَرَّاتٍ.</td><td>Kue ini <em>tiga kali</em> lebih besar.</td></tr>
+          <tr><td>3</td><td>She earns <strong>five times</strong> more.</td><td class="ar">تَكْسِبُ خَمْسَ مَرَّاتٍ أَكْثَرَ.</td><td>Dia menghasilkan <em>lima kali</em> lebih banyak.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- DATE & YEAR -->
+    <section class="card">
+      <div class="topic-title"><strong>Date &amp; Year — Tanggal dan Tahun</strong><span class="small">(contoh kalimat)</span></div>
+      <table>
+        <thead><tr><th>No</th><th>English</th><th>Arabic (harakat)</th><th>Terjemahan (ID)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>My birthday is on <strong>June 5, 2015</strong>.</td><td class="ar">عِيدُ مِيلَادِي يَوْمَ ٥ يُونْيُو ٢٠١٥.</td><td>Ulang tahunku pada <em>5 Juni 2015</em>.</td></tr>
+          <tr><td>2</td><td>Today is <strong>September 30, 2025</strong>.</td><td class="ar">ٱلْيَوْمَ هُوَ ٣٠ سِبْتَمْبِر ٢٠٢٥.</td><td>Hari ini tanggal <em>30 September 2025</em>.</td></tr>
+          <tr><td>3</td><td>The school opened in <strong>2008</strong>.</td><td class="ar">فُتِحَتِ ٱلْمَدْرَسَةُ فِي سَنَةِ ٢٠٠٨.</td><td>Sekolah dibuka pada tahun <em>2008</em>.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="small">Rumah Belajar SDIT Tihamah</div>
+
+  <script>
+    // create falling stars
+    const sky = document.getElementById('sky');
+    const starsCount = 14;
+    for(let i=0;i<starsCount;i++){
+      const s = document.createElement('div');
+      s.className='star';
+      const left = Math.random()*110; // percent
+      const delay = Math.random()*-20;
+      const dur = 6 + Math.random()*6;
+      s.style.left = left+'%';
+      s.style.top = (Math.random()*-80)+'vh';
+      s.style.opacity = 0.5 + Math.random()*0.6;
+      s.style.width = (1+Math.random()*3)+'px';
+      s.style.height = (40+Math.random()*120)+'px';
+      s.style.animationDuration = dur+'s';
+      s.style.animationDelay = delay+'s';
+      sky.appendChild(s);
+    }
+
+    // CSV download (simple)
+    function downloadCSV(){
+      const rows = [];
+      const tables = document.querySelectorAll('table');
+      tables.forEach(tbl=>{
+        const title = tbl.closest('section')?.querySelector('.topic-title strong')?.innerText || 'Section';
+        rows.push([title]);
+        const trs = tbl.querySelectorAll('thead tr, tbody tr');
+        trs.forEach(tr=>{
+          const cols = Array.from(tr.querySelectorAll('th,td')).map(td=>td.innerText.replace(/\n/g,' '));
+          rows.push(cols);
+        });
+        rows.push([]);
+      });
+      const csv = rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'materi_english_arabic_sdit_tihamah.csv';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    // small accessibility: ensure Arabic cells use appropriate font fallback
+    document.querySelectorAll('td.ar').forEach(td=>{
+      td.style.fontFamily = "'Scheherazade New','Amiri', 'Noto Naskh Arabic', 'Segoe UI', serif";
+    });
+  </script>
+</body>
+</html>
